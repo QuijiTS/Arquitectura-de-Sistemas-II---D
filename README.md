@@ -14,3 +14,25 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+# Despliegue de Aplicación Web en AWS S3 y CloudFront
+
+Esta es la entrega para la actividad de configuración de CDN y despliegue continuo.
+
+## Entregables
+
+### 1. Integración con Doppler (Config Syncs)
+![Doppler Config Syncs](./evidencias/Captura%20de%20pantalla%202026-02-14%20205314.png)
+
+### 2. Variables de Entorno en Doppler
+![Variables Doppler](./evidencias/Captura%20de%20pantalla%202026-02-14%20204526.png)
+
+### 3. Secretos Sincronizados en GitHub
+![GitHub Secrets](./evidencias/Captura%20de%20pantalla%202026-02-14%20205425.png)
+
+### 4. Aplicación Funcionando
+![App Preview](./evidencias/image.png)
+
+### 5. URL Pública (CloudFront)
+* **Enlace:** [https://TU-ID-AQUI.cloudfront.net](https://TU-ID-AQUI.cloudfront.net)
