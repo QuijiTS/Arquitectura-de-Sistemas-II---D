@@ -13,13 +13,13 @@ Esta es la entrega para la actividad de configuración de CDN y despliegue conti
 ![Bloqueo AWS](./evidencias/aws-error.png)
 
 ### 2. Integración con Doppler (Config Syncs)
-![Doppler Config Syncs](./evidencias/Captura%20de%20pantalla%202026-02-14%20205314.png)
+![Doppler Config Syncs](./evidencias/dopler-sync.png)
 
 ### 3. Variables de Entorno en Doppler
-![Variables Doppler](./evidencias/Captura%20de%20pantalla%202026-02-14%2020204526.png)
+![Variables Doppler](./evidencias/dopler-vars.png)
 
 ### 4. Secretos Sincronizados en GitHub
-![GitHub Secrets](./evidencias/Captura%20de%20pantalla%202026-02-14%2020205425.png)
+![GitHub Secrets](./evidencias/github-secrets.png)
 
 ### 5. Pipeline de GitHub Actions (Despliegue a S3 Exitoso)
 ![GitHub Actions Success](./evidencias/actions-success.png)
