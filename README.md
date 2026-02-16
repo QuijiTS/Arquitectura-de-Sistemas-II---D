@@ -1,38 +1,28 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-
-
 # Despliegue de Aplicación Web en AWS S3 y CloudFront
 
 Esta es la entrega para la actividad de configuración de CDN y despliegue continuo.
 
-## Entregables
+> **Nota Importante sobre la entrega:**
+> La configuración de la infraestructura base, gestión de secretos en Doppler y el pipeline de CI/CD (GitHub Actions) fue completada exitosamente, logrando automatizar el despliegue hacia AWS S3. Sin embargo, la creación de la distribución en AWS CloudFront se encuentra actualmente bloqueada por un proceso automático de verificación de cuenta por parte de AWS. 
+> 
+> Por este motivo, la URL pública del CDN no está disponible en este momento. A continuación se adjuntan las evidencias del trabajo completado y del bloqueo de seguridad de la plataforma.
 
-### 1. Integración con Doppler (Config Syncs)
+## Entregables Completados
+
+### 1. Evidencia del Bloqueo de AWS (Verificación de Cuenta)
+![Bloqueo AWS](./evidencias/aws-error.png)
+
+### 2. Integración con Doppler (Config Syncs)
 ![Doppler Config Syncs](./evidencias/Captura%20de%20pantalla%202026-02-14%20205314.png)
 
-### 2. Variables de Entorno en Doppler
-![Variables Doppler](./evidencias/Captura%20de%20pantalla%202026-02-14%20204526.png)
+### 3. Variables de Entorno en Doppler
+![Variables Doppler](./evidencias/Captura%20de%20pantalla%202026-02-14%2020204526.png)
 
-### 3. Secretos Sincronizados en GitHub
-![GitHub Secrets](./evidencias/Captura%20de%20pantalla%202026-02-14%20205425.png)
+### 4. Secretos Sincronizados en GitHub
+![GitHub Secrets](./evidencias/Captura%20de%20pantalla%202026-02-14%2020205425.png)
 
-### 4. Aplicación Funcionando
+### 5. Pipeline de GitHub Actions (Despliegue a S3 Exitoso)
+![GitHub Actions Success](./evidencias/actions-success.png)
+
+### 6. Aplicación Funcionando (Vista Local/Build)
 ![App Preview](./evidencias/image.png)
-
-### 5. URL Pública (CloudFront)
-* **Enlace:** [https://TU-ID-AQUI.cloudfront.net](https://TU-ID-AQUI.cloudfront.net)
