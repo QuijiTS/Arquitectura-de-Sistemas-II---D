@@ -1,4 +1,4 @@
-# Despliegue de Aplicación Web en AWS S3 y CloudFront
+# Despliegue de Aplicación Web en AWS Beanstalk
 
 Esta es la entrega para la actividad de configuración de CDN y despliegue continuo.
 
