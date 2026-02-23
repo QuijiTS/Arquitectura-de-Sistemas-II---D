@@ -1,28 +1,32 @@
-# Despliegue de Aplicación Web en AWS Beanstalk
+# Arquitectura de Sistemas II - Tarea 03
 
-Esta es la entrega para la actividad de configuración de CDN y despliegue continuo.
+Este repositorio contiene la configuración y el despliegue continuo de un portafolio web creado con Vite, dockerizado y alojado en AWS Elastic Beanstalk mediante integración continua.
 
-> **Nota Importante sobre la entrega:**
-> La configuración de la infraestructura base, gestión de secretos en Doppler y el pipeline de CI/CD (GitHub Actions) fue completada exitosamente, logrando automatizar el despliegue hacia AWS S3. Sin embargo, la creación de la distribución en AWS CloudFront se encuentra actualmente bloqueada por un proceso automático de verificación de cuenta por parte de AWS. 
-> 
-> Por este motivo, la URL pública del CDN no está disponible en este momento. A continuación se adjuntan las evidencias del trabajo completado y del bloqueo de seguridad de la plataforma.
+## 🌐 URL de la Aplicación en Vivo
+La aplicación se encuentra pública y funcionando en la siguiente dirección:
+[http://portafolio-vite-docker-env.eba-4v22nsma.us-east-2.elasticbeanstalk.com](http://portafolio-vite-docker-env.eba-4v22nsma.us-east-2.elasticbeanstalk.com)
 
-## Entregables Completados
+---
 
-### 1. Evidencia del Bloqueo de AWS (Verificación de Cuenta)
-![Bloqueo AWS](./evidencias/aws-error.png)
+## Entregables y Evidencias
 
-### 2. Integración con Doppler (Config Syncs)
-![Doppler Config Syncs](./evidencias/dopler-sync.png)
+### 1. Aplicación Funcionando
+Captura de la aplicación web desplegada exitosamente en la nube.
+![App Live](./evidencias/app-live.png)
 
-### 3. Variables de Entorno en Doppler
-![Variables Doppler](./evidencias/dopler-vars.png)
+### 2. Explicación del uso de Husky
+Se implementó **Husky** para la gestión automatizada de *Git Hooks*. Específicamente, se configuró un gancho `pre-commit` que intercepta cualquier intento de hacer un *commit* y ejecuta automáticamente el comando `npm run lint` (ESLint). Esto nos sirve como un "perro guardián" que obliga a que todo el código cumpla con las reglas de estilo y sintaxis antes de permitir que se guarde en el historial, garantizando código limpio y profesional en todo el repositorio.
+![Husky Linting](./evidencias/husky-validacion.png)
 
-### 4. Secretos Sincronizados en GitHub
-![GitHub Secrets](./evidencias/github-secrets.png)
+### 3. Configuración de AWS Elastic Beanstalk
+El entorno fue creado bajo la capa gratuita (Free Tier) de AWS, configurado en modo *Single instance* utilizando la plataforma de Docker nativa.
+![AWS Beanstalk Config](./evidencias/beanstalk-env.png)
 
-### 5. Pipeline de GitHub Actions (Despliegue a S3 Exitoso)
-![GitHub Actions Success](./evidencias/actions-success.png)
+### 4. Gestión de Secretos (Doppler + GitHub)
+Las credenciales de AWS (Access Key, Secret Key y Región) y variables de entorno fueron almacenadas de forma encriptada en Doppler y sincronizadas automáticamente hacia los secretos de GitHub.
+![Doppler Variables](./evidencias/doppler-variables.png)
+![GitHub Secrets](./evidencias/github-secretos-sincronizados.png)
 
-### 6. Aplicación Funcionando (Vista Local/Build)
-![App Preview](./evidencias/image.png)
+### 5. Pipeline de CI/CD (GitHub Actions)
+Se diseñó un flujo de GitHub Actions que se dispara automáticamente con cada push a la rama `assignment-03`. El pipeline realiza el build de la imagen de Docker para validar la integridad del código, empaqueta los archivos necesarios y despliega la nueva versión directamente en AWS Elastic Beanstalk.
+![Pipeline Success](./evidencias/pipeline-success.png)
