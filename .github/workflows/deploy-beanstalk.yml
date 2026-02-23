@@ -1,0 +1,30 @@
+name: Deploy to AWS Elastic Beanstalk
+
+on:
+  push:
+    branches:
+      - assignment-03
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 1. Descargar el código del repositorio
+        uses: actions/checkout@v4
+
+      - name: 2. Construir la Imagen de Docker (Prueba de Build)
+        run: docker build -t portafolio-vite-docker .
+
+      - name: 3. Preparar el paquete para Beanstalk
+        run: zip -r deploy.zip . -x "*.git*" "node_modules/*"
+
+      - name: 4. Desplegar en AWS Elastic Beanstalk
+        uses: einaregilsson/beanstalk-deploy@v22
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          application_name: ${{ secrets.EB_APP_NAME }}
+          environment_name: ${{ secrets.EB_ENV_NAME }}
+          version_label: "v-${{ github.run_number }}"
+          region: ${{ secrets.AWS_REGION }}
+          deployment_package: deploy.zip
