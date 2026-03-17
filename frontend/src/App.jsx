@@ -11,7 +11,7 @@ function App() {
 
   const fetchTasks = async () => {
     // Se conecta a tu API en Python
-    const response = await fetch("http://localhost:8000/tasks")
+    const response = await fetch("https://checklist-backend-x17t.onrender.com/tasks")
     const data = await response.json()
     setTasks(data)
   }
@@ -21,7 +21,7 @@ function App() {
     if (!newTask.trim()) return
 
     // Envía la nueva tarea al backend
-    await fetch("http://localhost:8000/tasks", {
+    await fetch("https://checklist-backend-x17t.onrender.com/tasks", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title: newTask })
