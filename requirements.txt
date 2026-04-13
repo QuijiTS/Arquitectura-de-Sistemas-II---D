@@ -1,0 +1,6 @@
+Flask==2.2.3
+Werkzeug==2.2.3
+Flask-SQLAlchemy==3.0.3
+graphene==2.1.9
+Flask-GraphQL==2.0.1
+gunicorn==21.2.0
