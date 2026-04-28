@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portafolio-vite
+  namespace: default
+  labels:
+    app: portafolio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: portafolio
+  template:
+    metadata:
+      labels:
+        app: portafolio
+    spec:
+      containers:
+      - name: portafolio
+        image: josequiji/portafolio-vite:latest
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: portafolio-service
+  namespace: default
+spec:
+  selector:
+    app: portafolio
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
